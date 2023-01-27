@@ -1,0 +1,2534 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "IFRI-UAC notation, API Documentation",
+        "description": "IFRI-UAC notation, API Documentation",
+        "contact": {
+            "email": "contact@equipe-api.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://192.168.43.5:8000/api",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/annees-academiques": {
+            "get": {
+                "tags": [
+                    "AnneeAcademique"
+                ],
+                "summary": "Années Académiques - List",
+                "description": "Returns list années académqiues",
+                "operationId": "anneeAcademiqueList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AnneeAcademiqueModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/annees-academiques/create": {
+            "post": {
+                "tags": [
+                    "AnneeAcademique"
+                ],
+                "summary": "AnneeAcademique - Create",
+                "description": "Returns AnneeAcademique created",
+                "operationId": "createAnneeAcademique",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AnneeAcademiqueRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AnneeAcademiqueResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/annees-academiques/{id}/update": {
+            "put": {
+                "tags": [
+                    "AnneeAcademique"
+                ],
+                "summary": "AnneeAcademique - Update",
+                "description": "Returns updated AnneeAcademique",
+                "operationId": "updateAnneeAcademique",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "AnneeAcademique id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AnneeAcademiqueRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AnneeAcademiqueResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/annees-academiques/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "AnneeAcademique"
+                ],
+                "summary": "AnneeAcademique - Delete",
+                "description": "Returns null AnneeAcademique",
+                "operationId": "deleteAnneeAcademique",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "AnneeAcademique id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AnneeAcademiqueResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/classes": {
+            "get": {
+                "tags": [
+                    "Classe"
+                ],
+                "summary": "Classe - List",
+                "description": "Returns list Classe",
+                "operationId": "classeList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ClasseModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/classes/create": {
+            "post": {
+                "tags": [
+                    "Classe"
+                ],
+                "summary": "AnneeAcademique - Create",
+                "description": "Returns Classe created",
+                "operationId": "createClasse",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ClasseRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClasseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/classes/{id}/update": {
+            "put": {
+                "tags": [
+                    "Classe"
+                ],
+                "summary": "Classe - Update",
+                "description": "Returns updated Classe",
+                "operationId": "updateClasse",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Classe id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ClasseRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClasseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/classes/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "Classe"
+                ],
+                "summary": "Classe - Delete",
+                "description": "Returns null Classe",
+                "operationId": "deleteClasse",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Classe id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ClasseResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/criteres-notation": {
+            "get": {
+                "tags": [
+                    "CritereNotation"
+                ],
+                "summary": "CritereNotation - List",
+                "description": "Returns list CritereNotation",
+                "operationId": "criteresNotationList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CritereNotationModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/criteres-notation/create": {
+            "post": {
+                "tags": [
+                    "CritereNotation"
+                ],
+                "summary": "Filiere - Create",
+                "description": "Returns CritereNotation created",
+                "operationId": "createCritereNotation",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CritereNotationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CritereNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/criteres-notation/{id}/update": {
+            "put": {
+                "tags": [
+                    "CritereNotation"
+                ],
+                "summary": "CritereNotation - Update",
+                "description": "Returns updated CritereNotation",
+                "operationId": "updateCritereNotation",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "CritereNotation id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CritereNotationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CritereNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/criteres-notation/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "CritereNotation"
+                ],
+                "summary": "CritereNotation - Delete",
+                "description": "Returns null CritereNotation",
+                "operationId": "deleteCritereNotation",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "CritereNotation id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CritereNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/enseignants": {
+            "get": {
+                "tags": [
+                    "Enseignant"
+                ],
+                "summary": "Enseignant - List",
+                "description": "Returns list Enseignant",
+                "operationId": "enseignantList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EnseignantModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/enseignants/create": {
+            "post": {
+                "tags": [
+                    "Enseignant"
+                ],
+                "summary": "Enseignant - Create",
+                "description": "Returns Enseignant created",
+                "operationId": "createEnseignant",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EnseignantRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EnseignantResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/enseignants/{id}/update": {
+            "put": {
+                "tags": [
+                    "Enseignant"
+                ],
+                "summary": "Enseignant - Update",
+                "description": "Returns updated Enseignant",
+                "operationId": "updateEnseignant",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enseignant id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/EnseignantRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EnseignantResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/enseignants/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "Enseignant"
+                ],
+                "summary": "Enseignant - Delete",
+                "description": "Returns null Enseignant",
+                "operationId": "deleteEnseignant",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Enseignant id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EnseignantResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/filieres": {
+            "get": {
+                "tags": [
+                    "Filiere"
+                ],
+                "summary": "Filiere - List",
+                "description": "Returns list Filiere",
+                "operationId": "filieresList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FiliereModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/filieres/create": {
+            "post": {
+                "tags": [
+                    "Filiere"
+                ],
+                "summary": "Filiere - Create",
+                "description": "Returns Filiere created",
+                "operationId": "createFiliere",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FiliereRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FiliereResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/filieres/{id}/update": {
+            "put": {
+                "tags": [
+                    "Filiere"
+                ],
+                "summary": "Filiere - Update",
+                "description": "Returns updated Filiere",
+                "operationId": "updateFiliere",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Filiere id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FiliereRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FiliereResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/filieres/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "Filiere"
+                ],
+                "summary": "Filiere - Delete",
+                "description": "Returns null Filiere",
+                "operationId": "deleteFiliere",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Filiere id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FiliereResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formulaires-notations": {
+            "get": {
+                "tags": [
+                    "FormulaireNotation"
+                ],
+                "summary": "FormulaireNotation - List",
+                "description": "Returns list FormulaireNotation",
+                "operationId": "formulaireNotationList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FormulaireNotationModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formulaires-notations/create": {
+            "post": {
+                "tags": [
+                    "FormulaireNotation"
+                ],
+                "summary": "FormulaireNotation - Create",
+                "description": "Returns FormulaireNotation created",
+                "operationId": "createFormulaireNotation",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormulaireNotationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormulaireNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formulaires-notations/{id}/update": {
+            "put": {
+                "tags": [
+                    "FormulaireNotation"
+                ],
+                "summary": "FormulaireNotation - Update",
+                "description": "Returns updated FormulaireNotation",
+                "operationId": "listNotation",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Notation id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormulaireNotationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormulaireNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formulaires-notations/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "FormulaireNotation"
+                ],
+                "summary": "FormulaireNotation - Delete",
+                "description": "Returns null FormulaireNotation",
+                "operationId": "deleteFormulaireNotation",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "FormulaireNotation id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/FormulaireNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/matieres": {
+            "get": {
+                "tags": [
+                    "Matiere"
+                ],
+                "summary": "Matiere - List",
+                "description": "Returns list Matiere",
+                "operationId": "matiereList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/MatiereModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/matieres/create": {
+            "post": {
+                "tags": [
+                    "Matiere"
+                ],
+                "summary": "Matiere - Create",
+                "description": "Returns Matiere created",
+                "operationId": "createMatiere",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MatiereRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MatiereResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/matieres/{id}/update": {
+            "put": {
+                "tags": [
+                    "Matiere"
+                ],
+                "summary": "Matiere - Update",
+                "description": "Returns updated Matiere",
+                "operationId": "updateMatiere",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Filiere id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MatiereRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MatiereResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/matieres/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "Matiere"
+                ],
+                "summary": "Matiere - Delete",
+                "description": "Returns null Matiere",
+                "operationId": "deleteMatiere",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Filiere id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/MatiereResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/niveaux": {
+            "get": {
+                "tags": [
+                    "Niveau"
+                ],
+                "summary": "Niveaux - List",
+                "description": "Returns list niveau",
+                "operationId": "niveauList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NiveauModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/niveaux/create": {
+            "post": {
+                "tags": [
+                    "Niveau"
+                ],
+                "summary": "Niveaux - Create",
+                "description": "Returns niveau created",
+                "operationId": "createNiveau",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NiveauRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NiveauResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/niveaux/{id}/update": {
+            "put": {
+                "tags": [
+                    "Niveau"
+                ],
+                "summary": "Niveaux - Update",
+                "description": "Returns updated niveau",
+                "operationId": "listNiveaux",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Niveau id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NiveauRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NiveauResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/niveaux/{id}/delete": {
+            "delete": {
+                "tags": [
+                    "Niveau"
+                ],
+                "summary": "Niveaux - Delete",
+                "description": "Returns null niveau",
+                "operationId": "deleteNiveaux",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Niveau id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NiveauResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formulaires-notations/{codeFormulaireNotation}/notations": {
+            "get": {
+                "tags": [
+                    "Notation"
+                ],
+                "summary": "Notation - List",
+                "description": "Returns list Notation",
+                "operationId": "notationList",
+                "parameters": [
+                    {
+                        "name": "codeFormulaireNotation",
+                        "in": "path",
+                        "description": "Code formulaire notation",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ListNotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/formulaires-notations/{codeFormulaireNotation}/notations/{notationId}": {
+            "get": {
+                "tags": [
+                    "Notation"
+                ],
+                "summary": "Notation - Item",
+                "description": "Returns Notation",
+                "operationId": "notationItem",
+                "parameters": [
+                    {
+                        "name": "codeFormulaireNotation",
+                        "in": "path",
+                        "description": "Code formulaire notation",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "notationId",
+                        "in": "path",
+                        "description": "Notation id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NotationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Authentification"
+                ],
+                "summary": "Authentification - Login",
+                "description": "Returns user with access token",
+                "operationId": "login",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "/login-anonymous": {
+            "post": {
+                "tags": [
+                    "Authentification"
+                ],
+                "summary": "Authentification - Anonymous",
+                "description": "Returns user with access token",
+                "operationId": "loginAnonymous",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AuthResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                }
+            }
+        },
+        "/users/generate-credentials": {
+            "post": {
+                "tags": [
+                    "Authentification"
+                ],
+                "summary": "Authentification - Generate credentials",
+                "description": "Returns users list",
+                "operationId": "generateCredentials",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CredentialRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CredentialModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/users/edutiants/{classe_id}": {
+            "get": {
+                "tags": [
+                    "Authentification"
+                ],
+                "summary": "Authentification - Get credentials by classe",
+                "description": "Returns users list",
+                "operationId": "getCredentials",
+                "parameters": [
+                    {
+                        "name": "classe_id",
+                        "in": "path",
+                        "description": "Classe id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CredentialModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/users/role/{name}": {
+            "get": {
+                "tags": [
+                    "Authentification"
+                ],
+                "summary": "Authentification - Get users by name",
+                "description": "Returns users list",
+                "operationId": "getUsers",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Role name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserModel"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/logout": {
+            "post": {
+                "tags": [
+                    "Authentification"
+                ],
+                "summary": "Authentification - Logout",
+                "description": "Returns message",
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LogoutResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AnneeAcademiqueModel": {
+                "title": "AnneeAcademique Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 18
+                    },
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of AnneeAcademique",
+                        "type": "string",
+                        "example": "2020-2021"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "AnneeAcademique"
+                }
+            },
+            "AnneeAcademiqueRequest": {
+                "title": "Save AnneeAcademique Request",
+                "required": [
+                    "libelle"
+                ],
+                "properties": {
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "Libelle of the AnneeAcademique",
+                        "type": "string",
+                        "example": "2020-2021"
+                    }
+                },
+                "type": "object"
+            },
+            "AnneeAcademiqueResponse": {
+                "title": "AnneeAcademique Response",
+                "properties": {
+                    "anneeAcademique": {
+                        "$ref": "#/components/schemas/AnneeAcademiqueModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "AnneeAcademiqueResponse"
+                }
+            },
+            "AuthResponse": {
+                "title": "Auth Response",
+                "properties": {
+                    "user": {
+                        "title": "authentification"
+                    },
+                    "access_token": {
+                        "title": "access_token",
+                        "type": "string"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "AuthResource"
+                }
+            },
+            "LoginRequest": {
+                "title": "Login Request",
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "email": {
+                        "title": "email",
+                        "description": "Email of the user",
+                        "type": "string",
+                        "example": "admin1998@gmail.com"
+                    },
+                    "password": {
+                        "title": "password",
+                        "description": "Password of the user",
+                        "type": "string",
+                        "example": "1993_188jjdjdjz"
+                    }
+                },
+                "type": "object"
+            },
+            "LogoutResponse": {
+                "title": "Logout Response",
+                "properties": {
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LogoutResource"
+                }
+            },
+            "RegisterRequest": {
+                "title": "Register Request",
+                "required": [
+                    "email",
+                    "password",
+                    "role"
+                ],
+                "properties": {
+                    "email": {
+                        "title": "email",
+                        "description": "Email of the user",
+                        "type": "string",
+                        "example": "admin1998@gmail.com"
+                    },
+                    "password": {
+                        "title": "password",
+                        "description": "Password of the user",
+                        "type": "string",
+                        "example": "1993_188jjdjdjz"
+                    },
+                    "role": {
+                        "title": "role",
+                        "description": "Role of the user",
+                        "type": "string",
+                        "example": "ADMIN or ETUDIANT"
+                    },
+                    "name": {
+                        "title": "name",
+                        "description": "Name of the user",
+                        "type": "string",
+                        "example": "Francis"
+                    }
+                },
+                "type": "object"
+            },
+            "UserModel": {
+                "title": "User Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "name": {
+                        "title": "name",
+                        "description": "Name of user",
+                        "type": "string",
+                        "example": "Robert"
+                    },
+                    "email": {
+                        "title": "email",
+                        "description": "email of user",
+                        "type": "string",
+                        "example": "admin1998@gmail.com"
+                    },
+                    "role": {
+                        "title": "role",
+                        "description": "role of user",
+                        "type": "string",
+                        "example": "ETUDIANT"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "User"
+                }
+            },
+            "ClasseModel": {
+                "title": "Classe Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "filiere": {
+                        "title": "libelle",
+                        "description": "libelle of niveau",
+                        "example": "L3"
+                    },
+                    "niveau": {
+                        "title": "niveau",
+                        "description": "niveau of Classe"
+                    },
+                    "anneeAcademique": {
+                        "title": "anneeAcademique",
+                        "description": "anneeAcademique of Classe"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Classe"
+                }
+            },
+            "ClasseRequest": {
+                "title": "Save Classe Request",
+                "required": [
+                    "niveau_id",
+                    "filiere_id",
+                    "annee_academique_id"
+                ],
+                "properties": {
+                    "niveau_id": {
+                        "title": "niveau_id",
+                        "description": "niveau_id of the classe",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "filiere_id": {
+                        "title": "filiere_id",
+                        "description": "filiere_id of the classe",
+                        "type": "integer",
+                        "example": "8"
+                    },
+                    "annee_academique_id": {
+                        "title": "annee_academique_id",
+                        "description": "annee_academique_id of the classe",
+                        "type": "integer",
+                        "example": "8"
+                    }
+                },
+                "type": "object"
+            },
+            "ClasseResponse": {
+                "title": "Classe Response",
+                "properties": {
+                    "classe": {
+                        "$ref": "#/components/schemas/ClasseModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "ClasseResponse"
+                }
+            },
+            "CredentialModel": {
+                "title": "Credential Model",
+                "properties": {
+                    "qrcode": {
+                        "title": "qrcode",
+                        "description": "CodeQr value",
+                        "type": "string",
+                        "example": "Koakdkvardnh19373JDJSJK72736YYSHJHJHDUY3676UJHD267ESJS"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Credential"
+                }
+            },
+            "CredentialRequest": {
+                "title": "Generate credentials Request",
+                "required": [
+                    "classe_id",
+                    "effectif"
+                ],
+                "properties": {
+                    "classe_id": {
+                        "title": "classe_id",
+                        "description": "Classe id",
+                        "type": "integer",
+                        "example": "2"
+                    },
+                    "effectif": {
+                        "title": "effectif",
+                        "description": "Effectif of the classe",
+                        "type": "integer",
+                        "example": "57"
+                    }
+                },
+                "type": "object"
+            },
+            "CredentialResponse": {
+                "title": "Credential Response",
+                "properties": {
+                    "users": {
+                        "$ref": "#/components/schemas/CredentialModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "CredentialsResource"
+                }
+            },
+            "CritereNotationModel": {
+                "title": "CritereNotation Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of CritereNotation",
+                        "type": "string",
+                        "example": "Le cours est-il vivant ?"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "type of CritereNotation",
+                        "type": "string",
+                        "example": "SELECT ou TEXTAREA"
+                    },
+                    "values": {
+                        "title": "values",
+                        "description": "values of CritereNotation",
+                        "type": "string",
+                        "example": "Mauvais#Passable#Bien#Très bien#Excellent"
+                    },
+                    "poids": {
+                        "title": "values",
+                        "description": "poids of CritereNotation",
+                        "type": "integer",
+                        "example": "7"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "CritereNotation"
+                }
+            },
+            "CritereNotationRequest": {
+                "title": "Save CritereNotation Request",
+                "required": [
+                    "libelle",
+                    "type",
+                    "poids"
+                ],
+                "properties": {
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of the CritereNotation",
+                        "type": "string",
+                        "example": "Le cours est comment général ?"
+                    },
+                    "poids": {
+                        "title": "poids",
+                        "description": "poids of the CritereNotation",
+                        "type": "string",
+                        "example": "11"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "type of the CritereNotation",
+                        "type": "string",
+                        "example": "TEXTAREA"
+                    },
+                    "values": {
+                        "title": "values",
+                        "description": "values of the CritereNotation",
+                        "type": "string",
+                        "example": ""
+                    }
+                },
+                "type": "object"
+            },
+            "CritereNotationResponse": {
+                "title": "CritereNotation Response",
+                "properties": {
+                    "critereNotation": {
+                        "$ref": "#/components/schemas/CritereNotationModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "CritereNotation"
+                }
+            },
+            "EnseignantModel": {
+                "title": "Enseignant Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "nom": {
+                        "title": "nom",
+                        "description": "nom of Enseignant",
+                        "type": "string",
+                        "example": "HOUNDJI"
+                    },
+                    "prenoms": {
+                        "title": "prenoms",
+                        "description": "prenoms of Enseignant",
+                        "type": "string",
+                        "example": "Ratheil V."
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Enseignant"
+                }
+            },
+            "EnseignantRequest": {
+                "title": "Save Enseignant Request",
+                "required": [
+                    "nom",
+                    "prenoms"
+                ],
+                "properties": {
+                    "nom": {
+                        "title": "nom",
+                        "description": "nom of the Enseignant",
+                        "type": "string",
+                        "example": "ADOZEKPA"
+                    },
+                    "prenoms": {
+                        "title": "prenoms",
+                        "description": "prenoms of the Enseignant",
+                        "type": "string",
+                        "example": "Romaric"
+                    }
+                },
+                "type": "object"
+            },
+            "EnseignantResponse": {
+                "title": "Enseignant Response",
+                "properties": {
+                    "enseignant": {
+                        "$ref": "#/components/schemas/EnseignantModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "EnseignantResponse"
+                }
+            },
+            "FiliereModel": {
+                "title": "Filiere Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of Filiere",
+                        "type": "string",
+                        "example": "Génie Logiciel"
+                    },
+                    "code": {
+                        "title": "code",
+                        "description": "code of Filiere",
+                        "type": "string",
+                        "example": "GL"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Filiere"
+                }
+            },
+            "FiliereRequest": {
+                "title": "Save Filiere Request",
+                "required": [
+                    "libelle",
+                    "code"
+                ],
+                "properties": {
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of the Filiere",
+                        "type": "string",
+                        "example": "Génie Logiciel"
+                    },
+                    "code": {
+                        "title": "code",
+                        "description": "code of the Filiere",
+                        "type": "string",
+                        "example": "GL"
+                    }
+                },
+                "type": "object"
+            },
+            "FiliereResponse": {
+                "title": "Niveau Response",
+                "properties": {
+                    "filiere": {
+                        "title": "filiere"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NiveauResponse"
+                }
+            },
+            "FormulaireNotationModel": {
+                "title": "FormulaireNotation Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "code": {
+                        "title": "code",
+                        "description": "code of Notation",
+                        "type": "string",
+                        "example": "klmd-huib-sqwg-sgvx-kddu"
+                    },
+                    "classe": {
+                        "title": "classe",
+                        "description": "classe of Notation"
+                    },
+                    "matiere": {
+                        "title": "matiere",
+                        "description": "classe of Notation"
+                    },
+                    "enseignant": {
+                        "title": "enseignant",
+                        "description": "enseignant of Notation"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "FormulaireNotation"
+                }
+            },
+            "FormulaireNotationRequest": {
+                "title": "Save FormulaireNotation Request",
+                "required": [
+                    "classe_id",
+                    "matiere_id",
+                    "enseignant_id"
+                ],
+                "properties": {
+                    "classe_id": {
+                        "title": "classe_id",
+                        "description": "classe_id of the Notation",
+                        "type": "integer",
+                        "example": "19"
+                    },
+                    "matiere_id": {
+                        "title": "matiere_id",
+                        "description": "matiere_id of the Notation",
+                        "type": "integer",
+                        "example": "6"
+                    },
+                    "enseignant_id": {
+                        "title": "enseignant_id",
+                        "description": "enseignant_id of the Notation",
+                        "type": "integer",
+                        "example": "4"
+                    }
+                },
+                "type": "object"
+            },
+            "FormulaireNotationResponse": {
+                "title": "FormulaireNotation Response",
+                "properties": {
+                    "formulaireNotation": {
+                        "$ref": "#/components/schemas/FormulaireNotationModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "FormulaireNotationResponse"
+                }
+            },
+            "MatiereModel": {
+                "title": "Matiere Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of Matiere",
+                        "type": "string",
+                        "example": "Recherche Opérationnelle"
+                    },
+                    "code": {
+                        "title": "code",
+                        "description": "code of Matiere",
+                        "type": "string",
+                        "example": "RO"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Matiere"
+                }
+            },
+            "MatiereRequest": {
+                "title": "Save Matiere Request",
+                "required": [
+                    "libelle",
+                    "code"
+                ],
+                "properties": {
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of the Matiere",
+                        "type": "string",
+                        "example": "Programmation avancée C++"
+                    },
+                    "code": {
+                        "title": "code",
+                        "description": "code of the Matiere",
+                        "type": "string",
+                        "example": "C++"
+                    }
+                },
+                "type": "object"
+            },
+            "MatiereResponse": {
+                "title": "Matiere Response",
+                "properties": {
+                    "matiere": {
+                        "$ref": "#/components/schemas/MatiereModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "MatiereResponse"
+                }
+            },
+            "NiveauModel": {
+                "title": "Niveau Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "libelle of niveau",
+                        "type": "string",
+                        "example": "L3"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Niveau"
+                }
+            },
+            "NiveauRequest": {
+                "title": "Save Niveau Request",
+                "required": [
+                    "libelle"
+                ],
+                "properties": {
+                    "libelle": {
+                        "title": "libelle",
+                        "description": "Libelle of the niveau",
+                        "type": "string",
+                        "example": "M3"
+                    }
+                },
+                "type": "object"
+            },
+            "NiveauResponse": {
+                "title": "Niveau Response",
+                "properties": {
+                    "niveau": {
+                        "title": "niveau"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NiveauResponse"
+                }
+            },
+            "LigneNotationModel": {
+                "title": "LigneNotation Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "critere": {
+                        "title": "critere"
+                    },
+                    "reponse": {
+                        "title": "reponse",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "LigneNotation"
+                }
+            },
+            "ListNotationResponse": {
+                "title": "List notation Response",
+                "properties": {
+                    "notations": {
+                        "title": "niveau",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/NotationModel"
+                        }
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "ListNotationResponse"
+                }
+            },
+            "NotationModel": {
+                "title": "Notation Model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "Identifier",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "lignes": {
+                        "title": "lignes",
+                        "description": "lignes of Notation",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/LigneNotationModel"
+                        }
+                    },
+                    "formulaire_notation": {
+                        "title": "lignes",
+                        "description": "lignes of Notation"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Notation"
+                }
+            },
+            "NotationResponse": {
+                "title": "Notation Response",
+                "properties": {
+                    "notation": {
+                        "$ref": "#/components/schemas/NotationModel"
+                    },
+                    "message": {
+                        "title": "message",
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "NotationResponse"
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearer_token": {
+                "type": "apiKey",
+                "description": "The value of access_token received from login: Ex: Bearer access_token_value",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authentification",
+            "description": "Routes for Authentification"
+        },
+        {
+            "name": "Niveau",
+            "description": "Routes for Niveau"
+        },
+        {
+            "name": "AnneeAcademique",
+            "description": "Routes for AnneeAcademique"
+        },
+        {
+            "name": "Filiere",
+            "description": "Routes for Filiere"
+        },
+        {
+            "name": "Classe",
+            "description": "Routes for Classe"
+        },
+        {
+            "name": "CritereNotation",
+            "description": "Routes for CritereNotation"
+        },
+        {
+            "name": "Enseignant",
+            "description": "Routes for Enseignant"
+        },
+        {
+            "name": "Matiere",
+            "description": "Routes for Matiere"
+        },
+        {
+            "name": "FormulaireNotation",
+            "description": "Routes for FormulaireNotation"
+        },
+        {
+            "name": "Notation",
+            "description": "Routes for Notation"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
